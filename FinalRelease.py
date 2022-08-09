@@ -882,7 +882,7 @@ def main():
 						total += (total * tax_val)
 					else:
 						yes, clicked = draw_sure(c[26], display, pygame.Rect(50, 60, 220, 70), (-60, 110), (130, 110), 75)
-					total = f"RM {total}"
+					total = f"RM {round(total, 2)}"
 					smol_font.render(total, ((160 - get_x(total, smol_font.chars, 1, len(total)) / 2), 90), display, 1)
 					if clicked:
 						if yes:		
@@ -943,6 +943,7 @@ def main():
 								section = "edit list"
 								bill = convert_to_bill(invoices.invoice, meters)
 								file_name = meters
+								current_meter = "unassignedAppliances"
 			
 			#modes
 			if any([remove_bill, edit_bill]):
@@ -1300,7 +1301,7 @@ def main():
 						yes, clicked = draw_sure(c[52], display, pygame.Rect(50, 60, 220, 70), (-60, 110), (130, 110), 75)
 					else:
 						yes, clicked = draw_sure(c[42], display, pygame.Rect(50, 60, 220, 70), (-60, 110), (130, 110), 75)
-					total = f"RM {total}"
+					total = f"RM {round(total, 2)}"
 					smol_font.render(total, ((160 - get_x(total, smol_font.chars, 1, len(total)) / 2), 90), display, 1)
 					if clicked:
 						if yes:		
